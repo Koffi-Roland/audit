@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}IdentificationccpDanger index{% endblock %}
+
+{% block body %}
+    <h1>IdentificationccpDanger index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description_danger</th>
+                <th>Cause_danger</th>
+                <th>Mesure_preventive</th>
+                <th>Frequence</th>
+                <th>Gravite</th>
+                <th>Detection</th>
+                <th>Risque</th>
+                <th>Ccp</th>
+                <th>ParametreMaitriser</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for identificationccp_danger in identificationccp_dangers %}
+            <tr>
+                <td>{{ identificationccp_danger.id }}</td>
+                <td>{{ identificationccp_danger.descriptionDanger }}</td>
+                <td>{{ identificationccp_danger.causeDanger }}</td>
+                <td>{{ identificationccp_danger.mesurePreventive }}</td>
+                <td>{{ identificationccp_danger.frequence }}</td>
+                <td>{{ identificationccp_danger.gravite }}</td>
+                <td>{{ identificationccp_danger.detection }}</td>
+                <td>{{ identificationccp_danger.risque }}</td>
+                <td>{{ identificationccp_danger.ccp ? 'Yes' : 'No' }}</td>
+                <td>{{ identificationccp_danger.parametreMaitriser }}</td>
+                <td>
+                    <a href="{{ path('identificationccp_danger_show', {'id': identificationccp_danger.id}) }}">show</a>
+                    <a href="{{ path('identificationccp_danger_edit', {'id': identificationccp_danger.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('identificationccp_danger_new') }}">Create new</a>
+{% endblock %}

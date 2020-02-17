@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SystemeSurveillance{% endblock %}
+
+{% block body %}
+    <h1>SystemeSurveillance</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ systeme_surveillance.id }}</td>
+            </tr>
+            <tr>
+                <th>Limite_critique</th>
+                <td>{{ systeme_surveillance.limiteCritique }}</td>
+            </tr>
+            <tr>
+                <th>Enregistrement</th>
+                <td>{{ systeme_surveillance.enregistrement }}</td>
+            </tr>
+            <tr>
+                <th>Action_corrective</th>
+                <td>{{ systeme_surveillance.actionCorrective }}</td>
+            </tr>
+            <tr>
+                <th>Frequence_controle</th>
+                <td>{{ systeme_surveillance.frequenceControle }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ systeme_surveillance.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Verification</th>
+                <td>{{ systeme_surveillance.verification }}</td>
+            </tr>
+            <tr>
+                <th>Resultat</th>
+                <td>{{ systeme_surveillance.resultat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('systeme_surveillance_index') }}">back to list</a>
+
+    <a href="{{ path('systeme_surveillance_edit', {'id': systeme_surveillance.id}) }}">edit</a>
+
+    {{ include('systeme_surveillance/_delete_form.html.twig') }}
+{% endblock %}

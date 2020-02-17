@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Produir{% endblock %}
+
+{% block body %}
+    <h1>Edit Produir</h1>
+
+    {{ include('produir/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('produir_index') }}">back to list</a>
+
+    {{ include('produir/_delete_form.html.twig') }}
+{% endblock %}

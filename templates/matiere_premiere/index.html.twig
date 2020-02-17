@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatierePremiere index{% endblock %}
+
+{% block body %}
+    <h1>MatierePremiere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere_premiere in matiere_premieres %}
+            <tr>
+                <td>{{ matiere_premiere.id }}</td>
+                <td>{{ matiere_premiere.nom }}</td>
+                <td>{{ matiere_premiere.description }}</td>
+                <td>{{ matiere_premiere.photo }}</td>
+                <td>
+                    <a href="{{ path('matiere_premiere_show', {'id': matiere_premiere.id}) }}">show</a>
+                    <a href="{{ path('matiere_premiere_edit', {'id': matiere_premiere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('matiere_premiere_new') }}">Create new</a>
+{% endblock %}

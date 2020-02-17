@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CritereSurveille{% endblock %}
+
+{% block body %}
+    <h1>CritereSurveille</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ critere_surveille.id }}</td>
+            </tr>
+            <tr>
+                <th>Critere</th>
+                <td>{{ critere_surveille.critere }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('critere_surveille_index') }}">back to list</a>
+
+    <a href="{{ path('critere_surveille_edit', {'id': critere_surveille.id}) }}">edit</a>
+
+    {{ include('critere_surveille/_delete_form.html.twig') }}
+{% endblock %}

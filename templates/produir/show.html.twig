@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produir{% endblock %}
+
+{% block body %}
+    <h1>Produir</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produir.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('produir_index') }}">back to list</a>
+
+    <a href="{{ path('produir_edit', {'id': produir.id}) }}">edit</a>
+
+    {{ include('produir/_delete_form.html.twig') }}
+{% endblock %}

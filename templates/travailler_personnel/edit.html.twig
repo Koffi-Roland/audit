@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TravaillerPersonnel{% endblock %}
+
+{% block body %}
+    <h1>Edit TravaillerPersonnel</h1>
+
+    {{ include('travailler_personnel/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('travailler_personnel_index') }}">back to list</a>
+
+    {{ include('travailler_personnel/_delete_form.html.twig') }}
+{% endblock %}

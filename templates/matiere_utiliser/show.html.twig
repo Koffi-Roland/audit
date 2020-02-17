@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatiereUtiliser{% endblock %}
+
+{% block body %}
+    <h1>MatiereUtiliser</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ matiere_utiliser.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('matiere_utiliser_index') }}">back to list</a>
+
+    <a href="{{ path('matiere_utiliser_edit', {'id': matiere_utiliser.id}) }}">edit</a>
+
+    {{ include('matiere_utiliser/_delete_form.html.twig') }}
+{% endblock %}

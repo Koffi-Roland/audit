@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MatiereUtiliser{% endblock %}
+
+{% block body %}
+    <h1>Create new MatiereUtiliser</h1>
+
+    {{ include('matiere_utiliser/_form.html.twig') }}
+
+    <a href="{{ path('matiere_utiliser_index') }}">back to list</a>
+{% endblock %}

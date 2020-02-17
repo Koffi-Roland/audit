@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatiereUtiliser index{% endblock %}
+
+{% block body %}
+    <h1>MatiereUtiliser index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matiere_utiliser in matiere_utilisers %}
+            <tr>
+                <td>{{ matiere_utiliser.id }}</td>
+                <td>
+                    <a href="{{ path('matiere_utiliser_show', {'id': matiere_utiliser.id}) }}">show</a>
+                    <a href="{{ path('matiere_utiliser_edit', {'id': matiere_utiliser.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('matiere_utiliser_new') }}">Create new</a>
+{% endblock %}

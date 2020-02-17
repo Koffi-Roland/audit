@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TravaillerPersonnel index{% endblock %}
+
+{% block body %}
+    <h1>TravaillerPersonnel index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for travailler_personnel in travailler_personnels %}
+            <tr>
+                <td>{{ travailler_personnel.id }}</td>
+                <td>
+                    <a href="{{ path('travailler_personnel_show', {'id': travailler_personnel.id}) }}">show</a>
+                    <a href="{{ path('travailler_personnel_edit', {'id': travailler_personnel.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('travailler_personnel_new') }}">Create new</a>
+{% endblock %}

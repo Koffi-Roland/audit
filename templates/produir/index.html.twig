@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produir index{% endblock %}
+
+{% block body %}
+    <h1>Produir index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produir in produirs %}
+            <tr>
+                <td>{{ produir.id }}</td>
+                <td>
+                    <a href="{{ path('produir_show', {'id': produir.id}) }}">show</a>
+                    <a href="{{ path('produir_edit', {'id': produir.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('produir_new') }}">Create new</a>
+{% endblock %}

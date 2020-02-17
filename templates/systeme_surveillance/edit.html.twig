@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SystemeSurveillance{% endblock %}
+
+{% block body %}
+    <h1>Edit SystemeSurveillance</h1>
+
+    {{ include('systeme_surveillance/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('systeme_surveillance_index') }}">back to list</a>
+
+    {{ include('systeme_surveillance/_delete_form.html.twig') }}
+{% endblock %}

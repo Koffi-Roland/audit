@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SystemeSurveillance{% endblock %}
+
+{% block body %}
+    <h1>Create new SystemeSurveillance</h1>
+
+    {{ include('systeme_surveillance/_form.html.twig') }}
+
+    <a href="{{ path('systeme_surveillance_index') }}">back to list</a>
+{% endblock %}
